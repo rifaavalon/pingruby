@@ -30,4 +30,6 @@ as well as if there were any packets dropped.
 If you want to run this just for fun type in 'ruby ping.rb' in the folder.
 
 I have included a simple script if you want to turn this into a commandline application
-then run it as a cron job, or a Packer job to let you know that the system is up and running, etc. 
+then run it as a cron job, or a Packer job to let you know that the system is up and running, etc.
+
+You will want to setup all of your credentials as Environment variables, before you deploy this to your systems. 
