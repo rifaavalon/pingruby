@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-COPY .
+WORKDIR /usr/local/bin
 
 RUN apt-get update
 
@@ -14,4 +14,6 @@ RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
 
 RUN rvm install ruby-2.4
 
-ENTRYPOINT  ["cli_enable.sh"]
+COPY . /usr/local/bin
+RUN bundle install
+RUN ruby ping.rb 

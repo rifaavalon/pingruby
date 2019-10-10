@@ -4,11 +4,12 @@ require 'net/ping'
 require 'socket'
 require 'rubygems'
 require 'twilio-ruby'
+require 'dotenv/load'
 
 @getip = Socket.getifaddrs.map { |i| i.addr.ip_address if i.addr.ipv4? }.compact
 
-account_sid = ''
-auth_token = ''
+account_sid = ENV["TWILIO_AUTH_TOKEN"]
+auth_token = ENV["TWILIO_AUTH_TOKEN"]
 
 def up?(host)
   check = Net::Ping::External.new(host)
