@@ -8,7 +8,7 @@ require 'dotenv/load'
 
 @getip = Socket.getifaddrs.map { |i| i.addr.ip_address if i.addr.ipv4? }.compact
 
-account_sid = ENV["TWILIO_AUTH_TOKEN"]
+account_sid = ENV["TWILIO_AUTH_TOKEN"
 auth_token = ENV["TWILIO_AUTH_TOKEN"]
 
 def up?(host)
@@ -39,8 +39,8 @@ avg = rtary.inject(0) {|sum, i| sum + i}/(repeat - fails)
 
 
 @client = Twilio::REST::Client.new(account_sid, auth_token)
-from = 'yourtrialnumber'
-to = 'yourphonenumber'
+from = ENV["TRIAL_NUMBER"]
+to = ENV["MY_PHONE_NUMBER"]
 
 message = @client.messages
   .create(
