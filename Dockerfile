@@ -16,4 +16,3 @@ RUN rvm install ruby-2.4
 
 COPY . /usr/local/bin
 RUN bundle install
-RUN ruby ping.rb 
